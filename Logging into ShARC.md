@@ -2,7 +2,7 @@
 
 The aim of this practical is to get you started using the HPC.
 
-## 1. Logging in and getting started
+## 1. Logging in
 We will be working on windows machines, which means that you need to use a program (ssh client) to access the cluster. We will be using MobXterm. Start by opening the program, if you have used it before to connect to sharc you may find "sharc.sheff.ac.uk" under "User sessions", in which case you can just double click on this to launch an ssh session on sharc. If not, click on "Session">"SSH" and enter
 ```
 sharc.sheffield.ac.uk
@@ -22,7 +22,7 @@ This node is just a gateway to the worker nodes. If you are on a worker node you
 [bo1nn@sharc-node004 ~]$
 ```
 
-## 2. Getting to grips with Linux and setting up your bash profile to access the software repository
+## 2. Getting to grips with Linux 
 First lets get used to finding your way around. So where are you now in the file system? 
 ```bash
 pwd
@@ -39,7 +39,29 @@ ls -a
 The ```-a``` switch makes ```ls``` show hidden files, which start with a dot in their file name.
 You might notice that the contents of the directory you are currently in are also displayed on the right hand panel in MobaXterm and you can use the icons and address bar to navigate the directories in sharc. 
 
+We are going to create a working directory in the /fastdata directory on sharc for you to work within during this practical. The fastdata directory is useful because there are no limits to the amount of data you can put there and data there can also be accessed faster (by the machine) than elsewhere on the cluster. However, it is not meant for long term storage of your data and everything on fastdata is automatically deleted after 3 months. It is also good practice for you to delete any data you no longer need, so as not to clog up fastdata for everyone else.
+
+Move to the fastdata directory:
+```bash
+cd /fastdata
+```
+Create a new directory here that is named your username (ie. boxxx, replacing the xxx)
+```bash
+mkdir boXXX
+```
+Navigate into your new folder (hint ```cd```). View the contents of this folder (hint ```ls```).
+
+## 3. Setting up your bash profile to access the software repository
+
 We are going to edit the file ```.bash_profile``` to configure your account so that you have access to the Genomics Software Repository that we will be using. The Genomics Software Repository is basically a collection of ready-to-use programs for NGS and population genetic/genomic analysis in a shared folder. Its main advantage is that it removes the necessity for the user to install commonly used programs in their home folder
+
+```
+cd
+```
+
+```bash
+ls -a
+```
 
 You can have access by adding the following to the end of your bash profile. The .bash_profile is a configuration file for configuring user environments e.g. it contains all the startup configuration and preferences for your command line interface.
 
@@ -49,7 +71,7 @@ then
     source /usr/local/extras/Genomics/.bashrc
 fi
 ```
-To do this we will use the program ```nano```, which is a simple text editor that can be used from the command line
+To edit our .bashrc will use the program ```nano```, which is a simple text editor that can be used from the command line
 ```bash
 nano .bash_profile
 ```
@@ -96,7 +118,6 @@ Type ```q``` to quit less.
 
 To check that the setup worked, we will need to log out of the hpc and then log in again. Log out of the working node first by typing ```logout``` and then ```logout``` again to exit sharc. 
 
-## 3. Navigating, creating directories and moving files
 Log in again (starting a new ssh session) and start a new interactive session (```qrsh```). You should then see
 ```
   Your account is set up to use the Genomics Software Repository
@@ -113,14 +134,4 @@ or
 gcta64
 ```
 
-We are going to create a working directory in the /fastdata directory on sharc for you to work within during this practical. The fastdata directory is useful because there are no limits to the amount of data you can put there and data there can also be accessed faster (by the machine) than elsewhere on the cluster. However, it is not meant for long term storage of your data and everything on fastdata is automatically deleted after 3 months. It is also good practice for you to delete any data you no longer need, so as not to clog up fastdata for everyone else.
 
-Move to the fastdata directory:
-```bash
-cd /fastdata
-```
-Create a new directory here that is named your username (ie. boxxx, replacing the xxx)
-```bash
-mkdir boXXX
-```
-Navigate into your new folder (hint ```cd```). View the contents of this folder (hint ```ls```).
