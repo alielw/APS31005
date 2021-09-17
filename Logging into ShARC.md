@@ -1,4 +1,4 @@
-# Introduction to the HPC
+# 1. Introduction to the HPC
 
 The aim of this practical is to get you started using the HPC.
 
