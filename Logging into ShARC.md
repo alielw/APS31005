@@ -31,7 +31,6 @@ List the files in the current directory, i. e. your home directory:
 ```bash
 ls
 ```
-You might notice that the contents of the directory you are currently in are also displayed on the right hand panel in MobaXterm and you can use the icons and address bar to navigate the directories in sharc. 
 
 Your home directory might look empty, but is it? 
 ```bash
