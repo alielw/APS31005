@@ -104,6 +104,15 @@ Log in again (starting a new ssh session) and start a new interactive session (`
 ```
 You should now see this every time you log in and start a new interactive session.
 
+Let's test that have have access to software in the Repository. 
+```
+bayesR
+```
+or
+```
+gcta64
+```
+
 We are going to create a working directory in the /fastdata directory on sharc for you to work within during this practical. The fastdata directory is useful because there are no limits to the amount of data you can put there and data there can also be accessed faster (by the machine) than elsewhere on the cluster. However, it is not meant for long term storage of your data and everything on fastdata is automatically deleted after 3 months. It is also good practice for you to delete any data you no longer need, so as not to clog up fastdata for everyone else.
 
 Move to the fastdata directory:
